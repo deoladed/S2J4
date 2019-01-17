@@ -6,7 +6,8 @@ require 'open-uri'
 def get_townhall_email(urls)
   ville = []
   email = []
-
+  ensemble = []
+  
   urls.each do |townhall_url|
     doc = Nokogiri::HTML(open(townhall_url))
     doc.xpath('//html/body/div/main/section[2]/div/table/tbody/tr[4]/td[2]').each do |node|
@@ -17,7 +18,11 @@ def get_townhall_email(urls)
     ville << node.text.capitalize
     end
   end
-  ensemble = Hash[ville.zip(email)]
+
+  ville.size.times do |i|
+    ensemble << { ville[i] => email[i] }
+  end
+  ensemble
 end
 
 

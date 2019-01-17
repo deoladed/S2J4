@@ -22,7 +22,7 @@ def deputes
     email << string.scan(/\b[a-z\.\-]*[@][a][s][s][e][m][b][l][e][e][-][n][a][t][i][o][n][a][l][e][.][f][r]\b/).join
   end
 
-  672.times do |i|
+  prenom.size.times do |i|
     listefinale << { 'first_name' => prenom[i], 'last_name' => nom[i], 'email' => email[i] }
   end
   listefinale
