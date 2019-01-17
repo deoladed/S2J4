@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require_relative '../lib/trader_de_lobscur'
 
 describe "the crypto_scrapper method" do

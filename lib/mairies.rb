@@ -17,14 +17,14 @@ def get_townhall_email(urls)
     ville << node.text.capitalize
     end
   end
-  p ensemble = Hash[ville.zip(email)]
+  ensemble = Hash[ville.zip(email)]
 end
 
 
-def get_townhall_urls(alltownhall_url)
+def get_townhall_urls
   urls = []
   urlcomplete = []
-  doc = Nokogiri::HTML(open(alltownhall_url))
+  doc = Nokogiri::HTML(open("http://annuaire-des-mairies.com/val-d-oise.html"))
   doc.xpath('//p/a').each do |node|
   urls << node['href'][1..-1]
   end
@@ -35,7 +35,7 @@ def get_townhall_urls(alltownhall_url)
 end
 
 def perform
-get_townhall_email(get_townhall_urls("http://annuaire-des-mairies.com/val-d-oise.html"))
+get_townhall_email(get_townhall_urls)
 end
 
 perform
