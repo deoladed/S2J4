@@ -25,6 +25,7 @@ def deputes
   prenom.size.times do |i|
     listefinale << { 'first_name' => prenom[i], 'last_name' => nom[i], 'email' => email[i] }
   end
+  puts listefinale
   listefinale
 end
 deputes

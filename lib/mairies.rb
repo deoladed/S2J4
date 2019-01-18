@@ -22,6 +22,7 @@ def get_townhall_email(urls)
   ville.size.times do |i|
     ensemble << { ville[i] => email[i] }
   end
+  puts ensemble
   ensemble
 end
 

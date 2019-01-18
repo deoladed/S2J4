@@ -1,5 +1,5 @@
 # frozen_string_literal: true
-# 
+
 require 'nokogiri'
 require 'open-uri'
 
@@ -20,6 +20,7 @@ def crypto_scrapper
   monnaies.size.times do |i|
     ensemble << { monnaies[i] => prix[i] }
   end
+  puts ensemble
   ensemble
 end
 crypto_scrapper
